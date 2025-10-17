@@ -1,0 +1,50 @@
+{% set name = "snowpark-connect-deps-1" %}
+{% set version = "3.56.2" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_')}}-{{ version }}.tar.gz
+  sha256: 35f0d0ca5afd36d7ff2f2a2490a5d77a29d61b02cf0c83a1e2cc4e3c593754ec
+
+build:
+  number: 100
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  skip: true  # [py<310 or py>312]
+
+requirements:
+  host:
+    - pip
+    - python
+    - wheel
+    - setuptools
+  run:
+    - python
+
+test:
+  imports:
+    - snowpark_connect_deps_1
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  home: https://pypi.org/project/snowpark-connect-deps-1
+  summary: Spark JAR dependencies for Snowpark Connect (Part 1)
+  license: Apache-2.0
+  license_family: Apache
+  license_file:
+    - LICENSE-binary
+    - NOTICE-binary
+    - LICENSE.txt
+  description: |
+    Spark framework JAR files for Snowpark Connect. This package contains Apache Spark 3.5.6 core components.
+  doc_url: https://pypi.org/project/snowpark-connect-deps-1
+  dev_url: https://pypi.org/project/snowpark-connect-deps-1
+
+extra:
+  recipe-maintainers:
+    - snegireff
