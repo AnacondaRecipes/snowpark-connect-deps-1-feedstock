@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/snowpark_connect_deps_1-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_')}}-{{ version }}.tar.gz
   sha256: 35f0d0ca5afd36d7ff2f2a2490a5d77a29d61b02cf0c83a1e2cc4e3c593754ec
 
 build:
