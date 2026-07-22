@@ -41,7 +41,8 @@ about:
     - NOTICE-binary
     - LICENSE.txt
   description: |
-    Spark framework JAR files for Snowpark Connect. This package contains Apache Spark 3.5.6 core components.
+    Spark framework JAR files for Snowpark Connect.
+    This package contains Apache Spark 3.5.6 core components.
   doc_url: https://pypi.org/project/snowpark-connect-deps-1
   dev_url: https://pypi.org/project/snowpark-connect-deps-1
 
